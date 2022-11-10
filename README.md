@@ -1,6 +1,6 @@
 # Exploring Neural Models for Query-Focused Summarization
 
-This is the official code repository for [Improving Factual Consistency in Summarization with Compression-Based Post-Editing](TBD)
+This is the official code repository for Improving Factual Consistency in Summarization with Compression-Based Post-Editing
 by [Alexander R. Fabbri](https://twitter.com/alexfabbri4), [Prafulla Choubey](https://sites.google.com/view/prafulla-choubey/), [Jesse Vig](https://twitter.com/jesse_vig), [Chien-Sheng Wu](https://twitter.com/jasonwu0731), and
 [Caiming Xiong](https://twitter.com/caimingxiong). 
 
@@ -11,7 +11,7 @@ We present code and instructions for running inference from the models introduce
 - [Perturber](#perturber)
 - [Post-Editor](#post-editor)
 - [Evaluation](#evaluation)
-- [Citation](#citation)
+- [Using Checkpoints](#using-checkpoints)
 - [License](#license)
 
 ## Introduction
@@ -26,9 +26,9 @@ The model produces a compressed output with these entities removed, improving en
 For training the perturber model, we use the data from the paper [Overcoming the Lack of Parallel Data in Sentence Compression](https://aclanthology.org/D13-1155.pdf) found [here](https://github.com/google-research-datasets/sentence-compression).
 
 We provide the script `./preprocess_perturber.py` for processing this data in a format suitable for model training.  
-Examples are filtered such that the compressed sentence is at least 75\% of the length of the uncompressed sentence.  
+Examples are filtered so the compressed sentence length is at least 75\% that of the uncompressed sentence.  
 We provide the script `./train.sh` for model training, which makes use of the following files: [train.py](https://github.com/salesforce/query-focused-sum/blob/master/multiencoder/train.py) and [select_checkpoints.py](https://github.com/salesforce/query-focused-sum/blob/master/multiencoder/select_checkpoints.py).  
-Our trained perturber checkpoint is found [here](TBD).
+Our trained perturber checkpoint can be found [here](https://storage.cloud.google.com/sfr-compedit-research/perturber.tar.gz).
 
 
 
@@ -44,11 +44,11 @@ Then, run `./generate.py` on the output of this preprocessing step to produce tr
 
 The script `truncate_csv.py` should be run on the above csv file to ensure that model summaries that we learn to post-edit are not truncated. 
 
-The above `./train.sh` can be used for training the post-editor on the output of the above scripts. Our trained post-editor checkpoint is found [here](TBD).
+The above `./train.sh` can be used for training the post-editor on the output of the above scripts. Our trained post-editor checkpoint for XSum can be found [here](https://storage.cloud.google.com/sfr-compedit-research/posteditor_xsum.tar.gz) and for CNN/DM [here](https://storage.cloud.google.com/sfr-compedit-research/posteditor_cnndm.tar.gz).
 
 </br> 
 
-## Pretrained Model Usage
+## Using Checkpoints
 
 The code below from `run.py` shows how to use the pretrained models:
 ```python
@@ -86,15 +86,6 @@ See `./entity_score.py` for entity precision and recall calculations.
 
 </br> 
 
-## Citation
-
-</br> 
-
 ## License
 
 This repository is released under the [BSD-3 License](LICENSE.txt).
-
-
-
-
-
