@@ -1,6 +1,6 @@
 # Exploring Neural Models for Query-Focused Summarization
 
-This is the official code repository for Improving Factual Consistency in Summarization with Compression-Based Post-Editing
+This is the official code repository for [Improving Factual Consistency in Summarization with Compression-Based Post-Editing](https://arxiv.org/abs/2211.06196)
 by [Alexander R. Fabbri](https://twitter.com/alexfabbri4), [Prafulla Choubey](https://sites.google.com/view/prafulla-choubey/), [Jesse Vig](https://twitter.com/jesse_vig), [Chien-Sheng Wu](https://twitter.com/jasonwu0731), and
 [Caiming Xiong](https://twitter.com/caimingxiong). 
 
@@ -12,6 +12,7 @@ We present code and instructions for running inference from the models introduce
 - [Post-Editor](#post-editor)
 - [Evaluation](#evaluation)
 - [Using Checkpoints](#using-checkpoints)
+- [Citation](#citation)
 - [License](#license)
 
 ## Introduction
@@ -83,6 +84,24 @@ print(postedited_output)
 ## Evaluation
 
 See `./entity_score.py` for entity precision and recall calculations.
+
+</br> 
+
+## Citation
+
+When referencing this repository, please cite [this paper](https://arxiv.org/abs/2211.06196):
+
+```bibtex
+@misc{fabbri-etal-2022-improving,
+      title={Improving Factual Consistency in Summarization with Compression-Based Post-Editing}, 
+      author={Alexander R. Fabbri and Prafulla Choubey and Jesse Vig and Chien-Sheng Wu and Caiming Xiong,
+      year={2022},
+      eprint={2211.06196},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2211.06196}
+}
+```
 
 </br> 
 
